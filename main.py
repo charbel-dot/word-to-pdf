@@ -7,11 +7,11 @@ try:
 
 # handling any error while importing
 except ImportError:
-    print("docx2pdf package not found in your machine! Do you want to install it using pip (y/n) ? : ")
+    print("Some packages are not found in your machine! Do you want to install them using pip (y/n) ? : ")
     userInput = str(input(""))
 
     if userInput == 'y' or userInput == 'Y':
-        os.system("pip install docx2pdf")
+        os.system("pip install docx2pdf && pip install termcolor")
 
     elif userInput == 'n' or userInput == 'N':
         print("\n\aExiting..")
@@ -82,7 +82,7 @@ print(GUI)
 
 # taking inputs
 try:
-    response = str(input("Choose: "))
+    response = int(input("Choose: ") or 4)
     username = os.getlogin()
 
 except KeyboardInterrupt:
