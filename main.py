@@ -60,6 +60,8 @@ def find(ext: list) -> str:
 # converting files
 def convert_to_pdf() -> None:
     for files in find(["docx"]):
+        if files == "":
+            return print('\nCould not find any files ending with .docx extension\tTry again\a')
         convert(files)
 
 # work done
@@ -68,7 +70,7 @@ def done() -> None:
   os.system('explorer .') # opening the folder
 
 def open_folder() -> None:
-    print("Opening your folder...\a")
+    print("Opening your folder...")
     os.system("explorer .")
 
 # exiting the program
@@ -82,11 +84,11 @@ print(GUI)
 
 # taking inputs
 try:
-    response = int(input("Choose: ") or 4)
+    response = str(input("Choose: "))
     username = os.getlogin()
 
 except KeyboardInterrupt:
-    print("\nExiting...\a")
+    print("\nExiting...")
 
 if response == '1':
     _path = os.getcwd()
@@ -108,7 +110,7 @@ elif response == '3':
             done()
 
     except KeyboardInterrupt:
-        print("\nExiting..\a")
+        print("\nExiting..")
 
 elif response == '4':
     exit_program()
