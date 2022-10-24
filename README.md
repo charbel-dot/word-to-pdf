@@ -1,12 +1,7 @@
-# Word to PDF converter in python!
-
-How to use:
-
-## In your Terminal
+# Word to PDF converter in python
 
 run this command:
 
-``` bash
+```bash
 python main.py
 ```
-
